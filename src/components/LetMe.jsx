@@ -10,7 +10,12 @@ const LetMe = () => {
           Whether it’s frontend, backend, UI/UX, or Android development, I love
           bringing ideas to life.
         </p>
-        <a href="#contact" className="let-me-btn">
+        <a 
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=debasishgayan27@gmail.com" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="let-me-btn"
+        >
           Contact Me
         </a>
       </div>

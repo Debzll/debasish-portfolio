@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import profilePic from "../assets/profile.png"; // Import from src/assets
 
 const quotes = [
   "I love building innovative web applications using React, Node.js, and modern technologies to create seamless user experiences.",
@@ -13,7 +14,7 @@ const Hero = () => {
   const [quoteIndex, setQuoteIndex] = useState(0);
   const [fade, setFade] = useState(true);
 
-  // Typewriter effect for header (looping)
+  // Typewriter effect
   useEffect(() => {
     const fullText = "Hi, I'm Debasish";
     let index = 0;
@@ -25,31 +26,29 @@ const Hero = () => {
         index++;
         if (index === fullText.length) {
           forward = false;
-          setTimeout(type, 1500); // pause at end
+          setTimeout(type, 1500);
           return;
         }
       } else {
         setDisplayedText(fullText.slice(0, index));
         index--;
-        if (index === 0) {
-          forward = true;
-        }
+        if (index === 0) forward = true;
       }
-      setTimeout(type, 150); // typing/deleting speed
+      setTimeout(type, 150);
     };
 
     type();
   }, []);
 
-  // Smooth quote fade effect
+  // Quote fade effect
   useEffect(() => {
     const interval = setInterval(() => {
-      setFade(false); // fade out
+      setFade(false);
       setTimeout(() => {
         setQuoteIndex(prev => (prev + 1) % quotes.length);
-        setFade(true); // fade in new quote
-      }, 1000); // fade duration
-    }, 8000); // total time per quote
+        setFade(true);
+      }, 1000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, []);
@@ -58,7 +57,8 @@ const Hero = () => {
     <section className="hero">
       <div className="hero-content">
         <h1 className="hero-heading">
-          {displayedText}<span className="cursor"></span>
+          {displayedText}
+          <span className="cursor"></span>
         </h1>
         <p className={`quote ${fade ? "fade-in" : "fade-out"}`}>
           {quotes[quoteIndex]}
@@ -67,7 +67,7 @@ const Hero = () => {
 
       <div className="hero-image">
         <div className="profile-card">
-          <img src="/profile.png" alt="Debasish" className="hero-profile-pic" />
+          <img src={profilePic} alt="Debasish" className="hero-profile-pic" />
         </div>
       </div>
     </section>

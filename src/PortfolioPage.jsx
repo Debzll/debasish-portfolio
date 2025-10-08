@@ -6,13 +6,23 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import LetMe from './components/LetMe';
 import Footer from './components/Footer';
-import LiquidGlassBackground from './components/LiquidGlassBackground'; // <-- new
+import LiquidGlassBackground from './components/LiquidGlassBackground';
 
 const PortfolioPage = () => {
   const [theme, setTheme] = useState('light');
+
+  // Projects with updated Portfolio Website link only
   const projects = [
-    { title: 'Plant Disease Detection', link: 'https://github.com/your-username/plant-detection', description: 'ML project detecting diseases in plants from images.' },
-    { title: 'Portfolio Website', link: 'https://github.com/your-username/portfolio', description: 'Personal website built with React.' }
+    { 
+      title: 'Plant Disease Detection', 
+      link: 'https://drive.google.com/drive/folders/1njKCJHdPrl4tsq7wV-rppQIsBr7rLqrK?usp=sharing', 
+      description: 'ML project detecting diseases in plants from images.' 
+    },
+    { 
+      title: 'Portfolio Website', 
+      link: 'https://drive.google.com/drive/folders/1hWJj0rLv7jFnXaAV6EgCBO591B0tNtnw?usp=sharing', 
+      description: 'Personal website built with React.' 
+    }
   ];
 
   useEffect(() => {
