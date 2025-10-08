@@ -4,24 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Debasish Portfolio</title>
-
+    <!-- Set system theme immediately before React loads -->
+    <script>
+      (function () {
+        try {
+          const prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+          ).matches;
+          if (prefersDark) document.body.classList.add("dark");
+          else document.body.classList.remove("dark");
+        } catch (e) {
+          console.error(e);
+        }
+      })();
+    </script>
     <!-- Google Fonts: Inter (Thin & Light) -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <script type="module" crossorigin src="/debasish-portfolio/assets/index-CB1kGOdU.js"></script>
-    <link rel="stylesheet" crossorigin href="/debasish-portfolio/assets/index-BaX8JK1q.css">
+    <script type="module" crossorigin src="/debasish-portfolio/assets/index-mzfObKOQ.js"></script>
+    <link rel="stylesheet" crossorigin href="/debasish-portfolio/assets/index-BXSEpyjH.css">
   </head>
   <body>
     <!-- 3D Background Canvas -->
-   
-
     <div id="root"></div>
-
     <!-- React Entry Point -->
-
- 
   </body>
 </html>
