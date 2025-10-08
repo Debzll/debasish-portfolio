@@ -46,7 +46,10 @@ Error generating stack: `+i.message+`
           align-items: center;
           justify-content: center;
           z-index: 2000;
+          opacity: 0;
+          animation: fadeIn 0.25s forwards;
         }
+
         .modal {
           background: ${x==="dark"?"#1f2937":"#ffffff"};
           color: ${x==="dark"?"#f3f4f6":"#111827"};
@@ -57,7 +60,20 @@ Error generating stack: `+i.message+`
           text-align: center;
           position: relative;
           box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+          transform: scale(0.8);
+          animation: scaleUp 0.25s forwards;
         }
+
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+
+        @keyframes scaleUp {
+          from { transform: scale(0.8); opacity: 0; }
+          to { transform: scale(1); opacity: 1; }
+        }
+
         .modal-close {
           position: absolute;
           top: 0.5rem;
@@ -67,12 +83,14 @@ Error generating stack: `+i.message+`
           cursor: pointer;
           color: ${x==="dark"?"#f3f4f6":"#111827"};
         }
+
         .modal-buttons {
           margin-top: 1.5rem;
           display: flex;
           justify-content: space-around;
           gap: 1rem;
         }
+
         .confirm-btn, .cancel-btn {
           padding: 0.5rem 1.2rem;
           border-radius: 0.5rem;
@@ -81,18 +99,22 @@ Error generating stack: `+i.message+`
           cursor: pointer;
           transition: transform 0.2s, box-shadow 0.2s;
         }
+
         .confirm-btn {
           background: #4f46e5;
           color: white;
         }
+
         .confirm-btn:hover {
           transform: scale(1.05);
           box-shadow: 0 0 15px rgba(79,70,229,0.5);
         }
+
         .cancel-btn {
           background: #e5e7eb;
           color: #111827;
         }
+
         .cancel-btn:hover {
           transform: scale(1.05);
           box-shadow: 0 0 10px rgba(0,0,0,0.2);
