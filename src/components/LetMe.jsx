@@ -1,6 +1,21 @@
 import React from "react";
 
 const LetMe = () => {
+
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    const mailtoLink = "mailto:debasishgayan27@gmail.com";
+    const gmailLink = "https://mail.google.com/mail/?view=cm&fs=1&to=debasishgayan27@gmail.com";
+
+    // Try opening mailto first
+    const newWindow = window.open(mailtoLink, "_self");
+
+    // If mailto fails, fallback to Gmail web
+    if (!newWindow) {
+      window.open(gmailLink, "_blank");
+    }
+  };
+
   return (
     <section className="let-me-cta">
       <div className="let-me-content">
@@ -10,14 +25,13 @@ const LetMe = () => {
           Whether it’s frontend, backend, UI/UX, or Android development, I love
           bringing ideas to life.
         </p>
-        <a 
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=debasishgayan27@gmail.com" 
-          target="_blank" 
-          rel="noopener noreferrer"
+        <button
+          onClick={handleContactClick}
           className="let-me-btn"
+          aria-label="Contact Me"
         >
           Contact Me
-        </a>
+        </button>
       </div>
     </section>
   );
